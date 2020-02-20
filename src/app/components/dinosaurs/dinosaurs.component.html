@@ -1,0 +1,33 @@
+<br>
+<div class="container">
+  <div class="alert alert-success" role="alert" *ngIf="messageAddedFriend">
+    {{messageAddedFriend}}
+  </div>
+  <div class="row">
+
+
+    <div class="col-sm-4" *ngFor="let item of dinosaurs">
+      <div class="card text-center border border-primary rounded">
+        <div class="card-body">
+          <a href="#">
+            <span class="glyphicon glyphicon-envelope"></span>
+          </a>
+
+
+          <p class="card-title"><b>Username : </b>{{item.username}}</p>
+          <p class="card-text"><b>Race : </b>{{item.race}}</p>
+          <p class="card-text"><b>Famille : </b>{{item.famille}}</p>
+          <p class="card-text"><b>Nourriture : </b>{{item.norriture}}</p>
+
+          <div>
+            <button (click)="addToFriendList(item)" class="btn btn-primary btn-sm">Ajouter</button>
+          </div>
+
+
+        </div>
+      </div>
+      <br>
+    </div>
+
+  </div>
+</div>

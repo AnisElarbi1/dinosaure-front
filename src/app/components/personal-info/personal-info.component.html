@@ -1,0 +1,65 @@
+<br>
+<div class="container">
+  <span class="badge badge-pill badge-info">Membre depuis :  {{dinosaure?.createdAt | date:'dd/MM/yyyy'}} </span>
+  <br>
+  <br>
+  <div class="list-group">
+
+    <button type="button" class="list-group-item active">
+      Informations personelles
+    </button>
+
+
+    <button type="button" class="list-group-item list-group-item-action ng-valid"><b>Nom d'utilisateur</b>
+      {{dinosaure?.username}}
+    </button>
+    <button type="button" class="list-group-item list-group-item-action ng-valid"><b>Race</b>
+      {{dinosaure?.race}}
+    </button>
+    <button type="button" class="list-group-item list-group-item-action ng-valid"><b>Famille</b>
+      {{dinosaure?.famille}}
+    </button>
+    <button type="button" class="list-group-item list-group-item-action ng-valid"><b>Nourriture</b>
+      {{dinosaure?.norriture}}
+    </button>
+    <button type="button" (click)="redirectToUpdatePage()" class="list-group-item active"><b>Mettre à jour</b>
+    </button>
+  </div>
+
+  <br>
+  <div class="alert alert-primary" role="alert">
+    <h4 class="alert-heading">Votre liste d'amis</h4>
+    <p>Ci-dessus votre liste d'amis</p>
+  </div>
+
+  <div class="alert alert-warning" role="alert" *ngIf="messageDeletedFriend">
+    {{messageDeletedFriend}}
+  </div>
+
+
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+    <tr>
+      <th scope="col">Utilisateur</th>
+      <th scope="col">Race</th>
+      <th scope="col">Famille</th>
+      <th scope="col">Nourriture</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of friends">
+      <th scope="row">{{item.username}}</th>
+      <td>{{item.race}}</td>
+      <td>{{item.famille}}</td>
+      <td>{{item.norriture}}</td>
+      <td>
+        <button (click)="unfriend(item)" class="btn btn-danger btn-sm">Supprimer</button>
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+

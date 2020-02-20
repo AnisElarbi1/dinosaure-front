@@ -1,0 +1,96 @@
+<br>
+<br>
+
+<div class="container">
+  <form [formGroup]="signupForm">
+    <div class="form-group">
+
+      <input type="text" class="form-control" id="utilisateur" aria-describedby="utilisateur"
+             formControlName="utilisateur"
+             placeholder="Nom Utilisateur">
+      <div *ngIf="signupForm.get('utilisateur').touched && signupForm.get('utilisateur').invalid">
+        <div *ngIf="signupForm.get('utilisateur').errors.required">
+          <div class="alert alert-danger" role="alert">
+            Nom d'utilisateur obligatoire
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class="form-group">
+
+      <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
+
+
+      <div *ngIf="signupForm.get('password').touched && signupForm.get('password').invalid">
+
+
+        <div *ngIf="signupForm.get('password').errors.required">
+          <div class="alert alert-danger" role="alert">
+            Mot de passe obligatoire
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="form-group">
+
+      <input type="text" class="form-control" id="race" aria-describedby="race" formControlName="race"
+             placeholder="Race">
+      <div *ngIf="signupForm.get('race').touched && signupForm.get('race').invalid">
+        <div *ngIf="signupForm.get('race').errors.required">
+          <div class="alert alert-danger" role="alert">
+            Race obligatoire
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="form-group">
+
+      <input type="text" class="form-control" id="famille" aria-describedby="famille" formControlName="famille"
+             placeholder="Famille">
+      <div *ngIf="signupForm.get('famille').touched && signupForm.get('famille').invalid">
+        <div *ngIf="signupForm.get('famille').errors.required">
+          <div class="alert alert-danger" role="alert">
+            Famille obligatoire
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class="form-group">
+
+      <input type="text" class="form-control" id="nourriture" aria-describedby="nourriture" formControlName="nourriture"
+             placeholder="Nourriture">
+      <div *ngIf="signupForm.get('nourriture').touched && signupForm.get('nourriture').invalid">
+        <div *ngIf="signupForm.get('nourriture').errors.required">
+          <div class="alert alert-danger" role="alert">
+            Nourriture obligatoire
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="message">
+      {{message}}
+    </div>
+
+
+    <button type="button" (click)="signup()" [disabled]="signupForm.invalid" class="btn btn-primary btn-sm">S'inscrire
+    </button>
+    <button type="reset" class="btn btn-danger btn-sm">Annuler</button>
+
+
+  </form>
+</div>

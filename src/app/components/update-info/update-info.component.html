@@ -1,0 +1,80 @@
+<br>
+<br>
+
+
+<div class="container">
+  <div class="alert alert-success" role="alert" *ngIf="message">
+    {{message}}
+  </div>
+
+  <form [formGroup]="updateForm">
+    <div class="form-group">
+
+      <input type="text" class="form-control" id="utilisateur" aria-describedby="utilisateur"
+             formControlName="utilisateur"
+             placeholder="Nom Utilisateur">
+      <div *ngIf="updateForm.get('utilisateur').touched && updateForm.get('utilisateur').invalid">
+        <div *ngIf="updateForm.get('utilisateur').errors.required">
+          <div class="alert alert-danger" role="alert">
+            Nom d'utilisateur obligatoire
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class="form-group">
+
+      <input type="text" class="form-control" id="race" aria-describedby="race" formControlName="race"
+             placeholder="Race">
+      <div *ngIf="updateForm.get('race').touched && updateForm.get('race').invalid">
+        <div *ngIf="updateForm.get('race').errors.required">
+          <div class="alert alert-danger" role="alert">
+            Race obligatoire
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="form-group">
+
+      <input type="text" class="form-control" id="famille" aria-describedby="famille" formControlName="famille"
+             placeholder="Famille">
+      <div *ngIf="updateForm.get('famille').touched && updateForm.get('famille').invalid">
+        <div *ngIf="updateForm.get('famille').errors.required">
+          <div class="alert alert-danger" role="alert">
+            Famille obligatoire
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class="form-group">
+
+      <input type="text" class="form-control" id="nourriture" aria-describedby="nourriture" formControlName="nourriture"
+             placeholder="Nourriture">
+      <div *ngIf="updateForm.get('nourriture').touched && updateForm.get('nourriture').invalid">
+        <div *ngIf="updateForm.get('nourriture').errors.required">
+          <div class="alert alert-danger" role="alert">
+            Nourriture obligatoire
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <button type="button" (click)="update()" [disabled]="updateForm.invalid" class="btn btn-primary btn-sm">Mettre à
+      jour
+    </button>
+    <button type="button" (click)="backToProfile()" class="btn btn-danger btn-sm">Retour</button>
+
+
+  </form>
+</div>

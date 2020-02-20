@@ -1,0 +1,33 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+
+    <div><a href="#" class="navbar-brand">Carnet d'adresse</a></div>
+    <ul class="navbar-nav">
+
+      <li><a
+        class="nav-link" *ngIf="!authenticationService.isUserLoggedIn()" routerLink="/signup">S'inscrire</a></li>
+      <li>
+
+        <a
+          class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" routerLink="dinosaurs">Dinosaurs</a></li>
+    </ul>
+
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+
+      <li><a
+        class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" routerLink="personal-info">Profil</a></li>
+
+
+      <li><a
+        class="nav-link" *ngIf="!authenticationService.isUserLoggedIn()" routerLink="/login">S'authentifier</a></li>
+      <li><a
+        class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" routerLink="/logout">Se déconnecter</a></li>
+    </ul>
+
+
+  </nav>
+
+
+</header>
+
